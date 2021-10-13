@@ -63,6 +63,10 @@ nav a{
   text-decoration: none;
 }
 
+nav{
+  background-color: rgba(221, 221, 221);
+}
+
   /* Requirement 2 code here*/
 a:hover{
   text-decoration: underline;
@@ -78,7 +82,7 @@ a:hover{
   z-index: 1;
 
   /* Requirement 3a code here*/
-  position: relative;
+  position: absolute;
   top: -40px;
 }
 
@@ -109,18 +113,18 @@ a:hover{
 /* Remainder of requirements here: */
 
 header{
+  background-image: url("../images/header.jpg");
   background-attachment: fixed; /* Parallax effect */
   background-position: center; /* Parallax effect */
   background-size: cover; /* Parallax effect */
   color: white;
   height: 400px; /* Parallax effect */
-  background-image: url("../images/clients.jpg");
 
   /* YOUR CODE HERE; */
   grid-row: 1 / span 1;
   grid-column: 1 / span 3;
+  background-repeat: no-repeat;
 }
-
 
 
 .about-image{
@@ -189,19 +193,34 @@ header{
 
 @media screen and (min-width: 800px){
   nav{
-    padding: 30px 0;
+    padding: 30px 0 30px;
 
     /* Your code here */
-    position: absolute;
-    right: 0;
+    text-align: right;
+
   }
 
   .container{
     display: grid;
-    grid-template: 50px auto 500px auto 50px / repeat(5,400px)
+    grid-template: repeat(5,400px) / 50px auto 500px auto 50px;
+    grid-row-gap: 15px;
 
   }
 
+  header{
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 1;
+
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center; /* Parallax effect */
+    background-size: cover; /* Parallax effect */
+    color: white;
+    height: 400px; /* Parallax effect */
+    background-image: url("../images/header.jpg");
+    
+  
+
+  }
   
 
   .about-image{
